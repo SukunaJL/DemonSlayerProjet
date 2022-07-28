@@ -1,0 +1,26 @@
+<div class="title-admin">Liste des Personnages</div>
+<p>Selectionnez un utilisateur à modifier</p>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($users as $user): ?>
+        <tr class="tr-link">
+            <td>
+                <a title="modifier <?= $user['nom'].' '.$user['prenom'] ?>" class="lien-list" href="index.php?page=admin_modify_user&id=<?=$user['id']?>"><?= $user['nom'] ?></a>
+            </td>
+            <td>
+                <a title="modifier <?= $user['nom'].' '.$user['prenom'] ?>" class="lien-list" href="index.php?page=admin_modify_user&id=<?=$user['id']?>"><?= $user['prenom'] ?></a>
+            </td>
+            <td>
+                <a title="modifier <?= $user['nom'].' '.$user['prenom'] ?>" class="lien-list" href="index.php?page=admin_modify_user&id=<?=$user['id']?>"><?= $user['email'] ?></a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

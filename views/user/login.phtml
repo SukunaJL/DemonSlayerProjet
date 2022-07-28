@@ -1,0 +1,28 @@
+<fieldset>
+    <legend>Se connecter</legend>
+    <form class="formulaire" method="POST">
+        
+        <label>Email :</label>
+        <input type="email" name="email"/>
+        
+            <?php if(isset($errors['email']) && !empty($errors['email'])): ?>
+        <div class="champs-obligatoire red">
+            <?= $errors['email']; ?>
+        </div>
+            <?php endif; ?>
+        
+        <label>Mot de passe :</label>
+        <input type="password" name="password"/>
+            <?php if(isset($errors['password']) && !empty($errors['password'])): ?>
+        <div class="champs-obligatoire red">
+            <?= $errors['password']; ?>
+        </div>
+            <?php endif; ?>
+        
+        <button type="submit" value="Submit">Valider</button>
+        
+        <a title="page d'enregistrement" class="basic-link" href="index.php?page=register">S'enregistrer</a>
+        
+    </form>
+    <img alt="image animée" class="img-anim-2" src="images/tanjetnesu.png"/>
+</fieldset>

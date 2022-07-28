@@ -1,0 +1,45 @@
+<fieldset>
+    <legend>S'enregistrer</legend>
+    <div><span class="red">*</span> champs obligatoires</div>
+    <form  name="myForm" class="formulaire" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        
+        <label>Nom <span class="red">*</span></label>
+        <input type="text" name="name" />
+        <span id="name" class="red"></span>
+        
+        <label>Prénom <span class="red">*</span></label>
+        <input type="text" name="firstname" />
+        <span id="firstname" class="red"></span>
+        
+        <label>Adresse <span class="red">*</span></label>
+        <input type="text" name="address" />
+        <span id="address" class="red"></span>
+        
+        <label>Email <span class="red">*</span></label>
+        <input type="email" name="email" />
+            <?php if(isset($errors['email']) && !empty($errors['email'])): ?>
+        <div class="red">
+            <?= $errors['email']; ?>
+        </div>
+            <?php endif; ?>
+        <span id="email" class="red"></span>
+        
+        <label>Mot de passe <span class="red">*</span></label>
+        <input type="password" name="password" />
+        <span id="password" class="red"></span>
+        
+        <label>Téléphone</label>
+        <input type="tel" name="phone"/>
+        
+        <label>Image de profil</label>
+        <input class="register-avatar" type="file" name="avatar"/>
+        
+        <span id="confirmation-register" class="green"></span>
+        <button type="submit" value="Submit">Valider</button>
+        
+        <a title="page de connection" class="basic-link" href="index.php?page=login">S'identifier</a>
+        
+    </form>
+    <img alt="image animée" class="img-anim-2" src="images/tanjetnesu.png"/>
+</fieldset>
+<script src="./js/formvalidator.js"></script>

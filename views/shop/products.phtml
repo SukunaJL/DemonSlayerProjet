@@ -1,0 +1,27 @@
+<fieldset class="fielset-shop">
+    <legend>Sweats-Shop</legend>
+    
+    <div class="acces-panier-shop">
+        
+<?php if(isset($_SESSION['email']) && !empty($_SESSION['email'])): ?>
+        <a title="page du Panier" href="index.php?page=panier"><i class="fas fa-shopping-basket"> Panier</i></a>
+<?php else: ?>
+
+    vous devez etre connecté pour effecter des achats en ligne :
+        <a title="page de connection" href="index.php?page=login">S'identifier</a>
+<?php endif; ?>
+    </div>
+    
+    <div class="shop-content">
+<?php foreach($products as $prod): ?>
+        <div>
+            <a title="<?= $prod['name']; ?>" href="index.php?page=product&id=<?=$prod['id']; ?>">
+                <img alt="<?= $prod['name']; ?>" class="img-arc" src="images/upload/product/<?= $prod['picture'] ?>"/>
+            </a>
+            <div class="shop-prod-name"><?= $prod['name']; ?></div>
+            <div class="shop-prod-price"><?= $prod['price']; ?>€</div>
+            
+        </div>
+<?php endforeach; ?>
+    </div>
+</fieldset>

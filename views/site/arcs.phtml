@@ -1,0 +1,14 @@
+<fieldset>
+    <legend>Arcs</legend>
+    <ol class="list-content">
+        <?php foreach($arcs as $arc): ?>
+        <li>
+            <a title="page <?= $arc['name'] ?>" href="index.php?page=arc&id=<?=$arc['id']; ?>">
+                <?= $arc['name']; ?>
+            </a>
+        </li>
+        <?php endforeach; ?>
+        
+    </ol>
+    <img alt="image animé liste des arcs" class="img-anim" src="images/kimetsu_no_yaiba_character.png"/>
+</fieldset>

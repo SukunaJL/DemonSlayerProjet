@@ -1,0 +1,12 @@
+<div class="title-admin">Liste des Personnages</div>
+<p>Selectionnez la page Personnage à modifier</p>
+
+<ul class="start-align">
+    <?php foreach($characters as $cha): ?>
+    <li>
+        <a title="modifier <?= $cha['name'] ?>" class="lien-list" href="index.php?page=admin_modify_character&id=<?=$cha['id']?>">
+            <?= $cha['name'] ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ul>

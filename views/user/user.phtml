@@ -1,0 +1,44 @@
+
+<fieldset>
+    <legend>Votre profil</legend>
+    <form class="formulaire">
+        
+        <?php if($_SESSION['admin']) :?>
+        <a title="accès espace administration" href="index.php?page=admin" class="admin-link">
+            Espace Administration
+        </a>
+        <?php endif; ?>
+        <div class="profile">
+            
+            <p>Nom :</p>
+            <p><?= $user['nom'] ?></p>
+            
+            <p>Prénom :</p>
+            <p><?= $user['prenom'] ?></p>
+            
+            <p>Adresse :</p>
+            <p><?= $user['adresse'] ?></p>
+            
+            <p>Téléphone :</p>
+                <?php if(isset($user['telephone']) && !empty($user['telephone'])): ?>
+            <p><?= $user['telephone'] ?></p>
+                <?php else: ?>
+            <p>Non renseigné</p>
+                <?php endif; ?>
+            
+            <p>Image de profil :</p>
+                <?php if(isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])): ?>
+            <p>
+                <img alt="votre photo de profil" class="avatar-login" src="images/upload/user/<?= $_SESSION['id'] ?>/<?= $_SESSION['avatar'] ?>"/>
+            </p>
+                <?php else: ?>
+            <p>Aucune</p>
+                <?php endif; ?>
+                
+        </div>
+        
+        <a title="modifier votre profil" class="annuler-modifier" href="index.php?page=user_profile">Modifer</a>
+        
+    </form>
+    <img class="img-anim-2" src="images/tanjetnesu.png"/>
+</fieldset>

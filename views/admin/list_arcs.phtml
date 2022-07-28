@@ -1,0 +1,12 @@
+<div class="title-admin">Liste des Arcs</div>
+<p>Selectionnez la page Arc à modifier</p>
+
+<ol class="start-align">
+    <?php foreach($arcs as $arc): ?>
+    <li>
+        <a title="modifier <?= $arc['name'] ?>" class="lien-list-arcs" href="index.php?page=admin_modify_arc&id=<?=$arc['id']?>">
+            <?= $arc['name'] ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ol>

@@ -1,0 +1,20 @@
+
+<div class="champs-obligatoire"><span class="red">*</span> champs obligatoires</div>
+<form class="formulaire" method="POST" enctype="multipart/form-data">
+    
+    <label>Nom <span class="red">*</span></label>
+    <input type="text" name="name" value="<?= $product['name'] ?>" required/>
+    
+    <label>Description <span class="red">*</span></label>
+    <textarea name="description" required><?= $product['description'] ?></textarea>
+    
+    <label>Photo</label>
+    <input class="register-avatar" type="file" name="picture"/>
+    
+    <label>Prix</label>
+    <input type="number" step="any" name="price" value="<?= $product['price'] ?>"/>
+    
+    <button type="submit" value="Submit">Valider</button>
+    <a title="retour" class="annuler-modifier" href="index.php?page=admin_list_product">annuler</a>
+    
+</form>

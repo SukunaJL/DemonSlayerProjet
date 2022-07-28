@@ -1,0 +1,14 @@
+<fieldset>
+    <legend>Personnages</legend>
+    <ul class="list-content">
+        <?php foreach($characters as $cha): ?>
+        <li>
+            <a title="page <?= $cha['name'] ?>" href="index.php?page=character&id=<?=$cha['id']?>"> 
+                <?= $cha['name'] ?>
+            </a>
+        </li>
+        <?php endforeach; ?>
+        
+    </ul>
+    <img alt="image animé liste des personnages" class="img-anim" src="images/kimetsu_no_yaiba_character.png"/>
+</fieldset>

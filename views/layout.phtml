@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <title>Demon Slayer(animé)</title>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="images/DSLogo.webp"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+  <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <a title="page d'accueil" href="index.php" class="head">
+      <img alt="logo homepage" class="logohead" src="images/drakeEau.png">
+      <h1 class="titlehead">Demon Slayer : Kimetsu no Yaiba</h1>
+    </a>
+
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item logo">
+          <a  title="page d'accueil" href="index.php" class="navbar-link">
+            <img alt="logo navbar" class="dslogo navbar-icon" src="images/DSLogo.webp"/>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a title="page des personnages" href="index.php?page=characters" class="navbar-link">
+            <i class="fas fa-users navbar-icon"></i>
+            <span class="navbar-title">Personnages</span>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a title="page des arcs" href="index.php?page=arcs" class="navbar-link">
+            <i class="fas fa-book-open navbar-icon"></i>
+            <span class="navbar-title">Arcs</span>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a title="page du shop" href="index.php?page=products" class="navbar-link">
+            <i class="fas fa-shopping-cart navbar-icon"></i>
+            <span class="navbar-title">Boutique</span>
+          </a>
+        </li>
+        <!-- LOGO CENTRAL MOBILE -->
+        <li class="navbar-item logo-bottom">
+          <a title="page d'accueil" href="index.php" class="navbar-link">
+            <img alt="logo navbar" class="dslogo navbar-icon" src="images/DSLogo.webp"/>
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a title="page contact" href="index.php?page=contact" class="navbar-link">
+            <i class="fas fa-phone navbar-icon"></i>
+            <span class="navbar-title">Contact</span>
+          </a>
+        </li>
+        <li class="navbar-item-midd logo dslogo-midd">
+          <a title="page d'accueil" href="index.php" class="navbar-link dslogo-midd">
+            <img alt="logo navbar" class="dslogo navbar-icon dslogo-midd" src="images/navbar-middle1.png"/>
+          </a>
+        </li>
+      <!-- CONNECTION -->
+        <!-- SI L'UTILISATEUR EST CONNECTE -->
+        <?php if(isset($_SESSION['email']) && !empty($_SESSION['email'])): ?>
+        <li class="navbar-item navbar-item-last">
+            <!-- SI L'UTILISATEUR A UPLOAD UNE IMAGE, L'AFFICHER -->
+            <?php if(isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])): ?>
+            <a title="page de profil" class="navbar-link" href="index.php?page=user">
+              <img alt="image de profil"  class="avatar-login navbar-icon" src="images/upload/user/<?= $_SESSION['id'] ?>/<?= $_SESSION['avatar'] ?>"/>
+            </a>
+            <?php else: ?>
+            <!-- SINON LOGO USER -->
+            <a title="page de profil" class="navbar-link" href="index.php?page=user">
+              <i class="fas fa-user navbar-icon"></i>
+              <span class="navbar-title">Profil</span>
+            </a>
+            <?php endif; ?>
+        </li>
+        <li class="navbar-item navbar-item-last">
+          <a title="déconnection" href="index.php?page=login&logout=true" class="navbar-link">
+            <i class="fas fa-sign-out-alt navbar-icon"></i>
+            <span class="navbar-title">Déconnecter</span>
+          </a>
+        </li>
+        <!-- SINON AFFICHER LES LIENS DE CONNECTION -->
+            <?php else: ?>
+        <li class="navbar-item navbar-item-last">
+          <a title="page d'enregistrement" href="index.php?page=register" class="navbar-link">
+            <i class="fas fa-sign-in-alt navbar-icon"></i>
+            <span class="navbar-title">S'enregistrer</span>
+          </a>
+        </li>
+        <li class="navbar-item navbar-item-last">
+          <a title="page de connection" href="index.php?page=login" class="navbar-link">
+            <i class="fas fa-user navbar-icon"></i>
+            <span class="navbar-title">S'identifier</span>
+          </a>
+        </li>
+        <?php endif; ?>
+        <li class="navbar-item-midd logo dslogo-midd">
+          <a title="page d'accueil" href="index.php" class="navbar-link dslogo-midd">
+            <img alt="logo navbar" class="dslogo navbar-icon dslogo-midd" src="images/navbar-middle2.png"/>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <?php $router->callActionFromRequest(); ?>
+
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<a title="Supprimer utilisateur" class="red" href="index.php?page=admin_delete_user&id=<?=$_GET['id']?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cet utilisateur?'));">Supprimer cet utilisateur</a>
+
+<div class="champs-obligatoire"><span class="red">*</span> champs obligatoires</div>
+<form class="formulaire" method="POST" enctype="multipart/form-data">
+    
+    <label>Nom <span class="red">*</span></label>
+    <input type="text" name="name" value="<?= $user['nom'] ?>" required/>
+    
+    <label>Prénom <span class="red">*</span></label>
+    <input type="text" name="firstname" value="<?= $user['prenom'] ?>" required/>
+    
+    <label>Adresse <span class="red">*</span></label>
+    <input type="text" name="address" value="<?= $user['adresse'] ?>" required/>
+    
+    <label>Téléphone</label>
+    <input type="tel" name="phone" value="<?= $user['telephone'] ?>"/>
+    
+    <label>Image de profil</label>
+    <input class="register-avatar" type="file" name="avatar"/>
+    
+    <button type="submit" value="Submit">Valider</button>
+    <a title="retour" class="annuler-modifier" href="index.php?page=user">annuler</a>
+    
+</form>

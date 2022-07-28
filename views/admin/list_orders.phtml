@@ -1,0 +1,38 @@
+<div class="title-admin">Liste des commandes</div>
+<p>Selectionnez une commande pour voir le detail</p>
+<table>
+    <thead>
+        <tr>
+            <th>Ref</th>
+            <th>Nom du Client</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($orders as $order): ?>
+        <tr class="tr-link">
+            <td>
+                <a  title="modifier commande n°<?= $order['id'] ?>" 
+                    class="lien-list" 
+                    href="index.php?page=admin_detail_order&id=<?=$order['id']?>">
+                    <?= $order['id'] ?>
+                </a>
+            </td>
+            <td>
+                <a  title="modifier commande n°<?= $order['id'] ?>" 
+                    class="lien-list" 
+                    href="index.php?page=admin_detail_order&id=<?=$order['id']?>">
+                    <?= $order['nom'].' '.$order['prenom']?>
+                </a>
+            </td>
+            <td>
+                <a  title="modifier commande n°<?= $order['id'] ?>" 
+                    class="lien-list" 
+                    href="index.php?page=admin_detail_order&id=<?=$order['id']?>">
+                    <?= $order['date'] ?>
+                </a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

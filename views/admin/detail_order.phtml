@@ -1,0 +1,73 @@
+<div class="facture-top">
+    <div>
+        <img alt="logo navbar" class="dslogo facture-logo" src="images/DSLogo.webp"/>
+    </div>
+    
+    <div class="facture-right">
+        <div>
+            <span>Référence client</span>
+            <span><?= $order[0]['ref_user'] ?></span>
+        </div>
+        <div>
+            <span>Nom</span>
+            <span><?= $order[0]['nom'] ?> <?= $order[0]['prenom'] ?></span>
+        </div>
+        <div>
+            <span>Adresse</span>
+            <span><?= $order[0]['adresse'] ?></span>
+        </div>
+        <div>
+            <span>Téléphone</span>
+            <span><?= $order[0]['telephone'] ?></span>
+        </div>
+        <div>
+            <span>Date commande</span>
+            <span><?= $order[0]['date'] ?></span>
+        </div>
+    </div>
+</div>
+
+<div class="facture-ref">
+    Référence commande : <?= $order[0]['ref_order'] ?>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Ref</th>
+            <th>Nom du produit</th>
+            <th>Taille</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($order as $ord): ?>
+        <tr>
+            <td>
+                <?= $ord['ref_product']?>
+            </td>
+            <td>
+                <?= $ord['name']?>
+            </td>
+            <td>
+                <?= $ord['size']?>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+<div class="panier-total">
+    <div class="panier-total-div">
+        <div>
+            <span>Sous-total </span>
+            <span><?=$total['total']?> €</span>
+        </div>
+        <div>
+            <span>Livraison </span>
+            <span class="italic">Offerte</span>
+        </div>
+        <div>
+            <span>Total </span>
+            <span><?=$total['total']?> €</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<fieldset>
+    <legend>Modifier votre compte</legend>
+    <div class="champs-obligatoire"><span class="red">*</span> champs obligatoires</div>
+    <form class="formulaire" method="POST" enctype="multipart/form-data">
+        
+        <label for="name">Nom <span class="red">*</span></label>
+        <input type="text" name="name" value="<?= $user['nom'] ?>"  required/>
+        
+        <label for="firstname">Prénom <span class="red">*</span></label>
+        <input type="text" name="firstname" value="<?= $user['prenom'] ?>"  required/>
+        
+        <label for="address">Adresse <span class="red">*</span></label>
+        <input type="text" name="address" value="<?= $user['adresse'] ?>" required/>
+        
+        <label for="password">Mot de passe <span class="red">*</span></label>
+        <input type="password" name="password" required/>
+        
+        <label for="phone">Téléphone</label>
+        <input type="tel" name="phone" value="<?= $user['telephone'] ?>" />
+        
+        <label for="avatar">Image de profil</label>
+        <input class="register-avatar" type="file" name="avatar"/>
+        
+        <button type="submit" value="Submit">Valider</button>
+        <a class="annuler-modifier" href="index.php?page=user"/>annuler</a>
+        
+    </form>
+    <img class="img-anim-2" src="images/tanjetnesu.png"></img>
+</fieldset>

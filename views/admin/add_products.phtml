@@ -1,0 +1,20 @@
+<div class="title-admin">Gestion d'ajout de produits</div>
+
+<a title="Modifier les produits" href="index.php?page=admin_list_product" class="lien-modif">Modifier les produits</a>
+
+<form class="formulaire" method="POST" enctype="multipart/form-data">
+    <label>Nom</label>
+    <input type="text" name="name" required/>
+    
+    <label>Description</label>
+    <textarea name="description" required></textarea>
+    
+    <label>Image</label>
+    <input type="file" name="picture"/>
+    
+    <label>Prix</label>
+    <input type="number" step="any" name="price"/>
+    
+    <button type="submit">Valider</button>
+    
+</form>

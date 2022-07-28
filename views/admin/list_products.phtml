@@ -1,0 +1,22 @@
+<div class="title-admin">Liste des produits</div>
+<p>Selectionnez un produit à modifier</p>
+<table>
+    <thead>
+        <tr>
+            <th>Ref</th>
+            <th>Intitulé</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($products as $product): ?>
+        <tr class="tr-link">
+            <td>
+                <a title="modifier <?= $product['name'] ?>" class="lien-list" href="index.php?page=admin_modify_product&id=<?=$product['id']?>"><?= $product['id'] ?></a>
+            </td>
+            <td>
+                <a title="modifier <?= $product['name'] ?>" class="lien-list" href="index.php?page=admin_modify_product&id=<?=$product['id']?>"><?= $product['name'] ?></a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

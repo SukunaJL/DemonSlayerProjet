@@ -1,0 +1,50 @@
+<fieldset class="fielset-shop">
+    <legend>Panier</legend>
+        <div class="panier-list-products">
+            <?php foreach($order as $ord): ?>
+                <div class="panier-product">
+                    <!-- SI IL N'Y A AUCUNE COMMANDE AFFICHER "PANIER VIDE" -->
+                    <?php if(!isset($ord['name']) && empty($ord['name'])): ?>
+                        <div class="panier-vide">PANIER VIDE</div>
+                         <!-- SINON AFFICHER LES COMMANDES -->
+                    <?php else: ?>
+                        <div>
+                            <img alt="<?= $ord['name'] ?>" src="images/upload/product/<?= $ord['picture'] ?>"/>
+                            
+                            <div class="panier-name-size">
+                                <p><?= $ord['name'] ?></p>
+                                <p>Taille : <?= $ord['size'] ?></p>
+                            </div>
+                        </div>
+                        
+                        <div class="panier-price">
+                            <p><?= $ord['price'] ?>€</p>
+                        
+                            <a title="supprimer produit" href="index.php?page=delete_product_panier&idP=<?=$ord['product_id']?>&idO=<?=$ord['order_id']?>">
+                                <i class="fas fa-trash-alt navbar-icon"></i>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+             <div class="panier-total">
+                <div class="panier-total-div">
+                    <div>
+                        <span>Sous-total </span>
+                        <span><?=$total['total']?> €</span>
+                    </div>
+                    <div>
+                        <span>Livraison </span>
+                        <span class="italic">Offerte</span>
+                    </div>
+                    <div>
+                        <span>Total </span>
+                        <span><?=$total['total']?> €</span>
+                    </div>
+                </div>
+                
+                <button class="valid-panier" type="submit" value="Submit"/>Valider la commande</button>
+            </div>
+            
+        </div>
+</fieldset>

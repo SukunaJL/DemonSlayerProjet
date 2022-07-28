@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>Administration Demon Slayer.</title>
+    <link rel="icon" type="image/svg+xml" href="./images/DSLogo.webp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+    <link href="./css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-admin">
+            <a title="page d'accueil du site" href="index.php">
+    	       <img alt="logo DS" src="./images/DSLogo.webp"/>
+    	    </a>
+            <h1>Administration</h1>
+            <a title="Déconnection" href="index.php?page=login&logout=true">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="wrapper">
+            <div class="gestion">
+                <div>
+                    <div>Pages du sites</div>
+                    <a title="gestion des pages personnages" href="index.php?page=admin_add_character">Personnages</a>
+                    <a title="gestion des pages arcs" href="index.php?page=admin_add_arc">Arcs</a>
+                </div>
+                <div>
+                    <div>Boutique</div>
+                    <a title="gestion des produits" href="index.php?page=admin_add_product">Produits</a>
+                    <a title="gestion des commandes" href="index.php?page=admin_list_order">Commandes</a>
+                </div>
+                <div>
+                    <div>Utilisateurs</div>
+                    <a title="gestion des utilisateurs" href="index.php?page=admin_list_user">Users</a>
+                </div>
+            </div>
+            
+            <div class="gestion-content">
+                <?php $router->callActionFromRequest(); ?>
+                
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

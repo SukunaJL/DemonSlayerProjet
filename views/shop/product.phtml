@@ -1,0 +1,37 @@
+<fieldset class="fielset-shop">
+    <legend>Sweats-Shop</legend>
+    <div  class="shop-content-detail">
+        <div class="img-arc img-shop-detail">
+            <img alt="<?= $product['name'] ?>" src="images/upload/product/<?= $product['picture'] ?>"/>
+        </div>
+        <div class="description-product-detail">
+            <p><?= $product['name'] ?></p>
+            <p><?= $product['price'] ?>€</p>
+            <div><?= $product['description'] ?></div>
+            
+        <?php if(isset($_SESSION['email']) && !empty($_SESSION['email'])): ?>
+            <form method="POST" action="index.php?page=add_panier&id=<?=$product['id']?>">
+                <label for="size">Taille :</label>
+                <select name="size">
+                    <option value="XS"          >XS</option>
+                    <option value="S"           >S</option>
+                    <option value="M" selected  >M</option>
+                    <option value="L"           >L</option>
+                    <option value="XL"          >XL</option>
+                    <option value="XXL"         >XXL</option>
+                </select>
+                <button type="submit" class="btn-panier">Ajouter au panier</button>
+            </form>
+
+            
+            
+        <?php else: ?>
+            
+            <p>vous devez etre connecté pour effecter des achats en ligne :
+                <a title="page de connection" href="index.php?page=login">S'identifier</a>
+            </p>
+            
+        <?php endif; ?>
+        </div>
+    </div>
+</fieldset>
